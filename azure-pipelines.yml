@@ -20,6 +20,6 @@ steps:
     location: 'West Europe'
     templateLocation: 'URL of the file'
     csmFile: 'https://raw.githubusercontent.com/Hasjiem/AzureRmPipeline-repo/main/CreateWebApp/azuredeploy.json'
-    overrideParameters: '-projectName myfirstpipeline'
+    overrideParameters: '-projectName ams00134'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
