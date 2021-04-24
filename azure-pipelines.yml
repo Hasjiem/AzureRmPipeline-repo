@@ -22,8 +22,8 @@ stages:
             resourceGroupName: 'DevOps'
             location: 'West Europe'
             templateLocation: 'URL of the file'
-            csmFileLink: 'https://raw.githubusercontent.com/Hasjiem/StorageAccount/azuredeploy.json'
-            csmParametersFileLink: 'https://raw.githubusercontent.com/Hasjiem/StorageAccount/azuredeploy.parameters.json'
+            csmFileLink: 'https://raw.githubusercontent.com/Hasjiem/AzureRmPipeline-repo/main/StorageAccount/azuredeploy.json'
+            csmParametersFileLink: 'https://raw.githubusercontent.com/Hasjiem/AzureRmPipeline-repo/main/StorageAccount/azuredeploy.parameters.json'
             deploymentMode: 'Validation'
         - task: PowerShell@2
           inputs:
