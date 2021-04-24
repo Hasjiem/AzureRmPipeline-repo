@@ -26,10 +26,6 @@ stages:
             csmParametersFileLink: 'https://raw.githubusercontent.com/Hasjiem/AzureRmPipeline-repo/main/StorageAccount/azuredeploy.parameters.json'
             deploymentMode: 'Validation'
         - task: PowerShell@2
-          inputs:
-            targetType: 'inline'
-            script: 'Install-Module Az.Resources -RequiredVersion 1.12.1-preview -AllowPrerelease -Force -Scope CurrentUser'
-        - task: PowerShell@2
           displayName: "Check for deletion"
           inputs:
             filePath: '$(Build.SourcesDirectory)/Tests/CheckForDeletion.ps1'
