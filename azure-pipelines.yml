@@ -27,12 +27,8 @@ stages:
             overrideParameters: '-storageAccountPrefix "stlit"'
             deploymentMode: 'Validation'
   - stage: Deploy
-    condition:
-      and(
-       succeeded(), 
-       eq(variables['Build.SourceBranch'], 'refs/heads/master')
-      )
     dependsOn: Test
+    condition: succeeded('Test')
     jobs:
       - job: "deployARM"
         pool:
