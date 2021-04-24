@@ -7,12 +7,19 @@ trigger:
 - "*"
 
 stages:
-  - stage: test
+  - stage: Deploy
+    condition:
+      and(
+       succeeded(), 
+       eq(variables['Build.SourceBranch'], 'refs/heads/master')
+      )
+    dependsOn:
+     test
     jobs:
-      - job: 'validateandtest'
+      - job: "deployARM"
         pool:
           vmimage: windows-latest
-        steps:
+        steps: 
         - task: AzureResourceManagerTemplateDeployment@3
           inputs:
             deploymentScope: 'Resource Group'
